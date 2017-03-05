@@ -19,7 +19,7 @@ subd$Global_active_power <- as.numeric(subd$Global_active_power)
 # Print PNG. Default settings for width and height match assignment specs.
 # TODO: Remove the "Index" label from the plot
 png("plot2.png")
-plot(subd$Global_active_power,type="l",lty="solid",xlab=NULL,ylab="Global Active Power (kilowatts)",xaxt="n")
+plot(subd$Global_active_power,type="l",lty="solid",xlab="",ylab="Global Active Power (kilowatts)",xaxt="n")
 l <- length(subd$Global_active_power)
 axis(side=1,labels=c("Thu","Fri","Sat"),at=c(0,l/2,l))
 dev.off()

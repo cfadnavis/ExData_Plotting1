@@ -17,23 +17,22 @@ subd <- subset(d,Date==d1|Date==d2)
 subd$Global_active_power <- as.numeric(subd$Global_active_power)
 
 # Print PNG. Default settings for width and height match assignment specs.
-# TODO: Remove the "Index" label from the plot
 png("plot4.png")
 par(mfrow=c(2,2))
 # plot 1,1
-plot(subd$Global_active_power,type="l",lty="solid",xlab=NULL,ylab="Global Active Power (kilowatts)",xaxt="n")
+plot(subd$Global_active_power,type="l",lty="solid",xlab="",ylab="Global Active Power (kilowatts)",xaxt="n")
 l <- length(subd$Global_active_power)
 axis(side=1,labels=c("Thu","Fri","Sat"),at=c(0,l/2,l))
 # plot 1,2
 plot(subd$Voltage,type="l",lty="solid",xlab="datetime",ylab="Voltage",xaxt="n")
 axis(side=1,labels=c("Thu","Fri","Sat"),at=c(0,l/2,l))
 # plot 2,1
-plot(subd$Sub_metering_1,type="l",col="black",lty="solid",xlab=NULL,ylab="Energy sub metering",xaxt="n")
-lines(subd$Sub_metering_2,type="l",col="red",lty="solid",xlab=NULL,ylab="Energy sub metering",xaxt="n")
-lines(subd$Sub_metering_3,type="l",col="blue",lty="solid",xlab=NULL,ylab="Energy sub metering",xaxt="n")
+plot(subd$Sub_metering_1,type="l",col="black",lty="solid",xlab="",ylab="Energy sub metering",xaxt="n")
+lines(subd$Sub_metering_2,type="l",col="red",lty="solid",xlab="",ylab="Energy sub metering",xaxt="n")
+lines(subd$Sub_metering_3,type="l",col="blue",lty="solid",xlab="",ylab="Energy sub metering",xaxt="n")
 axis(side=1,labels=c("Thu","Fri","Sat"),at=c(0,l/2,l))
 legend("topright",legend=c("Sub_metering_1","Sub_metering_2","Sub_metering_3"),col=c("black","red", "blue"), lty="solid")
 # plot 2,2
-plot(subd$Global_reactive_power,type="l",lty="solid",xlab=NULL,ylab="Global Reactive Power (kilowatts)",xaxt="n")
+plot(subd$Global_reactive_power,type="l",lty="solid",xlab="",ylab="Global Reactive Power (kilowatts)",xaxt="n")
 axis(side=1,labels=c("Thu","Fri","Sat"),at=c(0,l/2,l))
 dev.off()
